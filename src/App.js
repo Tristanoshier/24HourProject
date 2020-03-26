@@ -1,5 +1,4 @@
 import React from "react";
-import logo from "./logo.svg";
 import "./App.css";
 
 function App() {
@@ -10,12 +9,9 @@ function App() {
 
       <h1>Taylor Dickens</h1>
 
-
       <h1>Tristan</h1>
 
-      <h3>Adam<h3>
-
-
+      <h3>Adam</h3>
     </div>
   );
 }
