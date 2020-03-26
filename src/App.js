@@ -7,7 +7,11 @@ function App() {
     <div className="App">
       <h1>Master Branch</h1>
       <h1>Develop Branch</h1>
+
       <h1>Tristan</h1>
+
+      <h3>Adam<h3>
+
     </div>
   );
 }
