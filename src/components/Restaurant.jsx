@@ -1,6 +1,4 @@
 import React from "react";
-// let key = 'ff';
-// const config = { headers: {"user-key": key }};
 class Restaurant extends React.Component {
   constructor(props) {
     super(props);
@@ -25,11 +23,20 @@ class Restaurant extends React.Component {
   }
 
     restaurantMapper(){
-      console.log(this.state.restaurantArray)
+        
+        return this.state.restaurantArray.map((restaurant, index) => {
+            return(
+            <div className="display-box" key={index}>
+                <h4 className="name-heading">{restaurant.restaurant.name}</h4>
+                <p className="address-heading">{restaurant.restaurant.location.address}</p>
+            </div>
+            )
+        })  
     }
   render() {
     return (
-      <div>
+      <div className="restaurant-box">
+        <h2 className="restaurant-main">-Restaurants Near You-</h2>
         {this.restaurantMapper()}
       </div>
     );

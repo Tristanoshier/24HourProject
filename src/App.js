@@ -3,6 +3,7 @@ import Weather from './components/Weather';
 import { geolocated } from 'react-geolocated';
 import Nasa from './components/Nasa';
 import Restaurant from './components/Restaurant';
+import './css/main.css'
 
 class App extends React.Component {
   
@@ -11,10 +12,7 @@ class App extends React.Component {
     : !this.props.isGeolocationEnabled ? ( <div>Geolocation is not enabled</div>) 
     : this.props.coords ? (
         <div>
-          <p>latitude</p>
-          <p>{this.props.coords.latitude}</p>
-          <p>longitude</p>
-          <p>{this.props.coords.longitude}</p>
+          <h1 className="main-header">Location Application</h1>
           <Weather longitude={this.props.coords.longitude} latitude={this.props.coords.latitude}/>
           <Nasa longitude={this.props.coords.longitude} latitude={this.props.coords.latitude} />
           <Restaurant longitude={this.props.coords.longitude} latitude={this.props.coords.latitude}/>
@@ -23,7 +21,7 @@ class App extends React.Component {
         <div>Getting the location data&hellip; </div>
     );
   }
-  
+}
 export default geolocated({
   positionOptions: {
       enableHighAccuracy: false,

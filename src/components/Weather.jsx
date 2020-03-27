@@ -1,5 +1,4 @@
 import React from "react";
-const weatherKey = 'c2e31562118e91365ccd3a1935a85dbe';
 
 export default class Weather extends React.Component {
     constructor(props){
@@ -12,24 +11,27 @@ export default class Weather extends React.Component {
     }
 
     componentDidMount(){
+    const weatherKey = 'c2e31562118e91365ccd3a1935a85dbe';
     console.log(this.state.latitude)
     console.log(this.state.longitude)
-    fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${this.state.latitude}&lon=${this.state.longitude}&units=Imperial&appid=${weatherKey}`)
-      .then(res => {
+    fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${this.state.latitude}&lon=${this.state.longitude}&units=Imperial&appid=${weatherKey}`, {
+    headers: {
+        Accept: "application/json"
+        }   
+    }).then(res => {
           res.json()
       })
-      .then(json => {
-          console.log(json)
-      });
+      .then(data => {
+          console.log(data)
+          
+        });
     }
 
   render() {
     return (
       <div>
-       <p></p>
+       <p>{this.state.temp}</p>
       </div>
     );
   }
 }
-
-

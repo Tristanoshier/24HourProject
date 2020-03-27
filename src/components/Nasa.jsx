@@ -1,6 +1,4 @@
 import React from 'react';
-const nasaKey = 'F5UxaqjYbitLBfuGAqLZRVnTdPdktqkQDItV1rty';
-
 
 export default class Nasa extends React.Component {
     constructor(props){
@@ -11,21 +9,31 @@ export default class Nasa extends React.Component {
             latitude : props.latitude
         }
     }
-
-    componentDidMount(){
-    fetch(`https://api.nasa.gov/planetary/earth/imagery?lon=${this.longitude}&lat=${this.latitude}&api_key=${nasaKey}`)
-      .then(res => {
-          res.json()
+    componentDidMount() {
+      const proxyUrl = 'https://cors-anywhere.herokuapp.com/';
+      const url = 'https://api.nasa.gov/planetary/earth/imagery?';
+      const nasaKey = 'ZDJJHnQ2ZteVFqHiik49vTYcQQCRNPpASMyeK7vB';
+      fetch(`${proxyUrl}${url}lon=${this.props.longitude}&lat=${this.props.latitude}&api_key=${nasaKey}`, {
+          method: 'GET',
+          headers: new Headers({
+              'Content-Type': 'application/json',
+              'Access-Control-Allow-Origin': 'http://localhost3000'
+          })
       })
-      .then(json => {
-      })
-    }
-
+          .then(respsonse => respsonse.json())
+          .then(json => {
+              console.log(json);
+              this.setState({ img: json.url });
+          })
+  }
   render() {
     return (
       <div>
-       <img alt="nasa img"></img>
+       <img src={this.state.img} alt="nasa img"></img>
       </div>
     );
   }
 }
+
+
+
