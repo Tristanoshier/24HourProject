@@ -1,6 +1,8 @@
 import React from 'react';
 import Weather from './components/Weather';
 import { geolocated } from 'react-geolocated';
+import Nasa from './components/Nasa';
+import Restaurant from './components/Restaurant';
 
 class App extends React.Component {
   
@@ -14,6 +16,8 @@ class App extends React.Component {
           <p>longitude</p>
           <p>{this.props.coords.longitude}</p>
           <Weather longitude={this.props.coords.longitude} latitude={this.props.coords.latitude}/>
+          <Nasa longitude={this.props.coords.longitude} latitude={this.props.coords.latitude} />
+          <Restaurant longitude={this.props.coords.longitude} latitude={this.props.coords.latitude}/>
         </div>
     ) : (
         <div>Getting the location data&hellip; </div>
