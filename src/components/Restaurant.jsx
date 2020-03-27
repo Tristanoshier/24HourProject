@@ -27,15 +27,15 @@ class Restaurant extends React.Component {
         return this.state.restaurantArray.map((restaurant, index) => {
             return(
             <div className="display-box" key={index}>
-                <h4>{restaurant.restaurant.name}</h4>
-                <p>{restaurant.restaurant.location.address}</p>
+                <h4 className="name-heading">{restaurant.restaurant.name}</h4>
+                <p className="address-heading">{restaurant.restaurant.location.address}</p>
             </div>
             )
         })  
     }
   render() {
     return (
-      <div>
+      <div className="restaurant-box">
         <h2 className="restaurant-main">-Restaurants Near You-</h2>
         {this.restaurantMapper()}
       </div>
