@@ -1,0 +1,28 @@
+.display-box{
+    text-align: center;
+    color: rgb(216, 216, 216);
+}
+
+.restaurant-main {
+    text-align: center;
+    color: rgb(218, 218, 218);
+}
+.restaurant-box {
+    background-color: rgba(0, 0, 0, .8);
+    border-radius: 2%;
+    margin-left: 550px;
+    margin-right: 550px;
+    padding: 10px;
+}
+
+.name-heading{
+    color: rgb(216, 216, 216);
+    font-weight: bolder;
+    text-decoration: underline;
+}
+
+
+.address-heading{
+    color: rgb(126, 126, 126);
+
+}
