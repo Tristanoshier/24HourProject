@@ -23,7 +23,7 @@ class App extends React.Component {
         <div>Getting the location data&hellip; </div>
     );
   }
-}
+  
 export default geolocated({
   positionOptions: {
       enableHighAccuracy: false,
